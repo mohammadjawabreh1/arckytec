@@ -1,0 +1,438 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --mc:#B98E75;
+    --sc:#4d5054;
+    --mf:"Inter", serif;
+    --sf: 'Syne', sans-serif;
+}
+body {
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+img{
+    width: 100%;
+}
+span.title , h1.title{
+    font-family: 'Syne', sans-serif;
+    position: relative;
+}
+span.title {
+    padding-left: 40px;
+    color: var(--mc);
+}
+span.title::after , span.title::before{
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 1.5px;
+    background-color: var(--mc);
+
+}
+span.title::before {
+    top: 5px;
+    left: 5px;
+}
+span.title::after {
+    top: 10px;
+    left: 0;
+}
+h1,title {
+    font-weight: 700;
+}
+/* start header ================================================================================================ */
+header{
+    font-family: var(--sf);
+    height: 80px;
+    background-color: white;
+}
+
+/* start nav */
+nav {
+    height: 100%;
+    
+}
+nav a,
+nav i{
+    color: var(--sc);
+    transition: all 0.6s;
+}
+nav >ul>li {
+    font-weight: 500;
+    font-size: 14px;
+}
+/* nav logo  */
+nav .logo,
+nav .icons {
+    width: 15%;
+}
+
+nav > ul {
+    height: 100%;
+}
+/* nav links  */
+.links > li{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+.links > li a::after
+{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 5px;
+    bottom: 0;
+    background-color: var(--mc);
+    right: 0;
+    transition: all .5s;
+    z-index: 100;
+}
+.links > li > a.activ::after{
+    width: 100%;
+}
+.links > li:hover > a::after{
+    width: 100%;
+}
+.links > li:hover >a,
+.links > li > a.activ,
+.icons a:hover i{
+    color: var(--mc);
+}
+/* nav icons  */
+nav a.list-icon i{
+    color: var(--mc);
+    font-weight: 700;
+}
+@media screen and (max-width: 650px){
+    nav .logo {
+        width: 25%;
+    }
+    nav .icons {
+        display: none !important;
+    }
+}
+
+/* hover list work */
+.links > li .drop-down {
+    display: none;
+    position: absolute;
+    width: 200px;
+    top: 100%;
+    color: black;
+    font-weight: 600;
+    transition: display .5s;
+}
+.links > li:hover > ul {
+    display: block;
+}
+.links > li > ul li {
+    padding: 10px;
+}
+.links > li > ul li:not(:last-child) {
+    border-bottom: 1px solid #eee;
+}
+.links > li > ul li:hover {
+    a {
+        color: white;
+    }
+    background-color: var(--mc);
+}
+@media (max-width: 900px ){
+    nav ul.links {
+        display: none !important;
+    }
+    nav a.list-icon {
+        display: block !important;
+    }
+}
+/*  mobile side par  */
+.side-par {
+    height: 100vh;
+    width: 250px;
+    background-color: #212429;
+    z-index: 100;
+}
+.side-par .side-head {
+    border-bottom: 1px solid #dce1e94b;
+}
+.side-par .side-ul ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #dce1e94b;
+}
+.side-par .side-ul button {
+    background-color: var(--mc);
+    padding: 3px 8px;
+    color: white;
+}
+/* end header  ================================================================================================*/
+
+
+
+/* start overlay-imges ================================================================================================ */
+.sectionTow {
+    height: calc(100vh - 80px);
+}
+.sectionTow .background {
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    animation: scaleImg 3s infinite ease-in;
+}
+.sectionTow .text {
+    font-family: var(--mf);
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sectionTow .title {
+    animation: transformtext 3s infinite ;
+}
+.sectionTow .title h1 {
+    font-size: 10vw;
+    font-family: var(--sf);
+}
+.sectionTow .contact {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    animation: transformtextTow 3s infinite;
+}
+@media screen and (max-width:500px) {
+    .sectionTow .contact {
+        flex-direction: column;
+        align-items: baseline;
+    }
+}
+.sectionTow button {
+    font-size: 16px;
+    outline: none;
+    border: none;
+    color: white;
+    background-color: var(--mc);
+    padding: 15px;
+}
+.sectionTow .help {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.sectionTow .help i {
+    color: var(--mc);
+    font-size: 30px;
+}
+@keyframes scaleImg {
+    0% {
+
+    }
+    100% {
+        transform: scale(1.5);
+    }
+}
+@keyframes transformtext {
+    0%{
+        opacity: 0.2;
+        transform: translateY(-100%);
+    }
+}
+@keyframes transformtextTow {
+    0%{
+        opacity: 0.2;
+        transform: translateY(+200%);
+    }
+}
+/* end   overlay-imges  ================================================================================================*/
+
+
+
+/* start about ================================================================================================ */
+section.about {
+    height: 600px;
+}
+section.about .about-left {
+
+} 
+section.about .img-2{
+    border: 20px solid white;
+}
+@media screen and (max-width : 700px ){
+    section.about .img-2 {
+        display: none;
+    }
+    
+}
+@media screen and (max-width : 1200px ){
+    section.about{ 
+        flex-direction: column;
+    }
+}
+/* end   about ================================================================================================ */
+
+
+
+/* start swiper section ================================================================================================ */
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .swiper-button-prev,.swiper-button-next {
+    top: 50px;
+    font-size: 20px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--mc);
+    border: 1px solid #babbbd;
+    
+  }
+  .swiper-button-prev:hover,.swiper-button-next:hover{
+    color: white;
+    background-color: var(--mc);
+  }
+  .swiper-button-prev {
+    right: 60px;
+  }
+  .swiper-button-next  {
+    right: 0;
+  }
+@media ( max-width: 1000px ) {
+    .swiper {
+        width: 90%;
+        margin: auto;
+        overflow: hidden;
+    }
+    .swiper .container > .title {
+        text-align: center;
+    }
+    .swiper-button-next , .swiper-button-prev {
+        display: none;
+    }
+
+}
+/* end   swiper section ================================================================================================ */
+
+
+
+/* start counter section ================================================================================================ */
+.counter-section {
+    display: flex;
+    justify-content: space-between;
+}
+.counter-section .num {
+    font-size: 72px;
+    line-height: 72px !important;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1px #6A6C70;
+    font-family: var(--sf) !important;
+    letter-spacing: 2px;
+}
+.counter-section .num::after {
+    content: "+";
+}
+/* start counter section ================================================================================================ */
+
+/* end   counter section ================================================================================================ */
+
+/* start pricing  section ================================================================================================ */
+.pricing-section {
+
+} 
+.pricing-section .pricing-cards {
+
+}
+.pricing-section  .card .card-head {
+    font-family: var(--sf);
+    h2{
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 24px;
+    }
+    p{
+        font-family: var(--mf);
+    }
+    span {
+        font-size: 18px;
+        color: var(--sc);
+        font-weight: 500;
+        line-height: 40px;
+    }
+    span > span {
+        color: black;
+        font-size: 40px;
+        font-weight: 600;
+        
+        margin-top: 10px;
+        margin-bottom: 27px;
+    }
+    
+}
+.pricing-section  .card .card-head span > span::before {
+    content: "$";
+}
+
+.pricing-section  .card h2 {
+
+}
+@media (max-width : 1000px ) {
+    .pricing-section > .title {
+        text-align: center;
+    }
+}
+/* end   pricing section ================================================================================================ */
+
+
+/* animations  ================================================================================================*/
+/*  the header img scrolling animation  */
+.scroll-img img{
+    animation: infinite scroll-header-img 20s linear;
+}
+@keyframes scroll-header-img {
+    from{
+        transform: translatex(0);
+    }
+    to{
+        transform: translatex(-100%);
+    }
+}
+
+
+/* img changer in main section */ 
+
+/* end anemations ================================================================================================ */
+
